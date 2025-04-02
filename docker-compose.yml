@@ -32,6 +32,8 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: nodejsnginx
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
     ports:
       - 5444:5432
     restart: always
@@ -46,3 +48,6 @@ services:
 networks:
     app-network:
       driver: bridge
+
+volumes:
+  postgres_data:
