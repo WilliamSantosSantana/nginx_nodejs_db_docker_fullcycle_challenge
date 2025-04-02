@@ -4,7 +4,9 @@ services:
       context: ./node
       dockerfile: Dockerfile
     environment:
-      DATABASE_URL: postgres://postgres:postgres@db:5432/mydatabase
+      DATABASE_URL: postgres://postgres:postgres@db:5444/nodejsnginx
+    ports:
+      - "3000:3000"
     depends_on:
       db:
         condition: service_healthy
@@ -29,9 +31,9 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: mydatabase
-    volumes:
-      - ./db-data:/var/lib/postgresql/data
+      POSTGRES_DB: nodejsnginx
+    ports:
+      - 5444:5432
     restart: always
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]

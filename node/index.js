@@ -8,9 +8,9 @@ const {
   animals,
 } = require("unique-names-generator");
 
-const port = 8080;
+const port = 3000;
 
-const DATABASE_URL = "postgres://postgres:postgres@db:5432/mydatabase";
+const DATABASE_URL = "postgres://postgres:postgres@db:5432/nodejsnginx";
 
 const pool = new Pool({ connectionString: DATABASE_URL });
 
