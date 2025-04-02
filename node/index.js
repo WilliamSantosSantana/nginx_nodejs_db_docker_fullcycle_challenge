@@ -10,7 +10,7 @@ const {
 
 const port = 3000;
 
-const DATABASE_URL = "postgres://postgres:postgres@db:5432/nodejsnginx";
+const DATABASE_URL = process.env.DATABASE_URL;
 
 const pool = new Pool({ connectionString: DATABASE_URL });
 

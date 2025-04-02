@@ -4,7 +4,7 @@ services:
       context: ./node
       dockerfile: Dockerfile
     environment:
-      DATABASE_URL: postgres://postgres:postgres@db:5444/nodejsnginx
+      DATABASE_URL: postgres://postgres:postgres@db:5432/nodejsnginx
     ports:
       - "3000:3000"
     depends_on:
