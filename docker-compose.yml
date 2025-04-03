@@ -13,6 +13,9 @@ services:
     restart: always
     networks:
       - app-network
+    volumes:
+      - ./node:/app
+  
    
   nginx:
     image: nginx
